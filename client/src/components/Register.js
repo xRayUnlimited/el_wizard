@@ -5,13 +5,19 @@ import { registerUser } from '../actions/auth';
 import { setFlash } from '../actions/flash';
 
 class Register extends Component {
-  state = { name: '', gamertag: '', email: '', password: '', passwordConfirmation: '' };
+  state = { 
+    name: '', 
+    email: '', 
+    password: '', 
+    passwordConfirmation: '',
+    gamertag: '',
+  };
 
   handleSubmit = event => {
     event.preventDefault();
     const { 
-      name,
       gamertag,
+      name,
       email, 
       password, 
       passwordConfirmation 
@@ -31,7 +37,7 @@ class Register extends Component {
   }
 
   render() {
-    const { name, email, password, passwordConfirmation } = this.state;
+    const { gamertag, name, email, password, passwordConfirmation } = this.state;
 
     return (
       <Segment basic>
