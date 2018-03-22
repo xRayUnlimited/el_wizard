@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
     .where('t.name in (?) AND users.id <> ?', tags, id)
   end
 
-  def by_tag(id, tag)
+  def self.by_tag(id, tag)
     select('DISTINCT(users.id), users.name, image')
     .joins('INNER JOIN taggings ts 
               ON ts.user_id = users.id

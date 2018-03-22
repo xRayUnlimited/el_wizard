@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { getTags, deleteTag } from '../actions/tags';
 import TagForm from './TagForm';
 import LikeUsers from './LikeUsers';
-
+import Tag from './Tag'
 class Tags extends React.Component {
   componentDidMount() {
     this.props.dispatch(getTags())
@@ -27,7 +27,7 @@ class Tags extends React.Component {
                     <List.Icon
                       name="cancel"
                       style={{ cursor: 'pointer' }}
-                    />
+                    />  
                     <List.Content>
                       <List.Header>
                         #{tag.name}
