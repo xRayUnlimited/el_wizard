@@ -7,6 +7,7 @@ import Register from './Register';
 import Flash from './Flash';
 import Home from './Home';
 import Profile from './Profile';
+import TagList from './TagList'
 import ProtectedRoute from './ProtectedRoute';
 import AuthRoute from './AuthRoute';
 import FetchUser from './FetchUser';
@@ -20,6 +21,11 @@ class App extends Component {
         <FetchUser>
           <Switch>
             <ProtectedRoute exact path='/' component={Home} />
+            <ProtectedRoute 
+              exact 
+              path='/tags/:tag'
+              component={TagList}
+            />
             <ProtectedRoute 
               exact 
               path='/profile'
