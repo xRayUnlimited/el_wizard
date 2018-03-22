@@ -1,15 +1,14 @@
-import React from 'react'
-import { Divider } from 'semantic-ui-react';
-import TagForm from './TagForm';
+import axios from 'axios';
 
-class Tags extends React.Component {
-  render() {
-    return (
-      <TagForm />
-      
-    )
+export const addTag = (tag) => {
+  return (dispatch) => {
+    axios.post('/api/tags', { tag })
+      .then( res => {
+        const { data: tag, headers } = res;
+        if (res.data)
+          dispatch({ type: 'ADD_TAG', tag, headers })
+        else
+          dispatch({ type: 'HEADERS', headers })
+      })
   }
-
 }
-
-export default Tags;

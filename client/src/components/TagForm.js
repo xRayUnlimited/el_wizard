@@ -1,15 +1,15 @@
 import React from 'react';
 import { Form } from 'semantic-ui-react';
 import { connect } from 'react-redux';
-import { addTag } from '../actions/tags'
+import { addTag } from '../actions/tags';
 
 class TagForm extends React.Component {
   state = { name: '' }
 
   handleChange = (e) => {
-    const  {value } = e.target;
-    const name = value.toLowerCase().replace('', '')
-    this.setState({  })
+    const { value } = e.target;
+    const name = value.toLowerCase().replace(' ', '')
+    this.setState({ name })
   }
 
   handleSubmit = (e) => {
@@ -23,11 +23,11 @@ class TagForm extends React.Component {
     return (
       <Form onSubmit={this.handleSubmit}>
         <Form.Input
-          onChange={this.handleChange}
-          value={this.state.name}
-          required
-          placehold="Add Tag"
-        />
+           onChange={this.handleChange}
+           value={this.state.name}
+           required
+           placeholder="Add Tag"
+         />
       </Form>
     )
   }
